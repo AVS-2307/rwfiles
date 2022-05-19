@@ -1,5 +1,4 @@
 import os
-import pickle
 from pprint import pprint
 
 BASE_PATH = os.getcwd()
@@ -19,8 +18,6 @@ def file_merging():
             list_final += [count_of_lines, file_content]
             d = {list_final[i]: list_final[i + 1] for i in range(0, len(list_final), 2)}
             sorted_tuple = sorted(d.items(), key=lambda x: x[0])
-            # result[filename] = sorted_tuple
-            # tup = tuple(list_final)
             result[filename] = sorted_tuple
 
         with open('out.txt', 'w', encoding='utf-8') as out:
@@ -29,6 +26,3 @@ def file_merging():
 
 
 file_merging()
-
-
-
